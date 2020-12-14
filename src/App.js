@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text,  StyleSheet } from 'react-native';
-import { Header, Button, Spinner } from './components/common';
+import { Header, Button, Spinner, Card, CardSection } from './components/common';
 import firebase from 'firebase';
 import LoginForm from './components/loginForm';
 
@@ -35,10 +35,13 @@ class App1 extends Component {
         switch(this.state.loggedIn){
             case true:
             return(
-             <Button 
-            //  style ={styles.ButttonStyle} 
+                <Card>
+                <CardSection>
+             <Button  
              onPress={() => firebase.auth().signOut()} >
                  Log Out</Button>
+                </CardSection>
+                 </Card>
             );
             case false: 
                return <LoginForm />;
